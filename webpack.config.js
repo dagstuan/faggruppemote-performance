@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -26,9 +25,17 @@ module.exports = {
       }
     ],
   },
+  devtool: 'inline-source-map',
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      eslint: {
+        failOnError: false,
+        failOnWarning: false,
+      },
+    }),
+  ],
   plugins: [
     // extract CSS into separate file
-    new ExtractTextPlugin('[name].bundle.css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'main',
       children: true,

@@ -7,11 +7,13 @@
     "clean": "rimraf dist",
     "build": "npm run clean && webpack --progress --config webpack.config.js",
     "start:webpack": "webpack-dev-server --progress --config webpack.config.js",
-    "start": "python -m SimpleHTTPServer 8080"
+    "start": "python -m SimpleHTTPServer 8080",
+    "watch": "onchange '*.js' -- npm run build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "onchange": "^3.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },

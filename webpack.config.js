@@ -33,8 +33,6 @@ module.exports = {
         failOnWarning: false,
       },
     }),
-  ],
-  plugins: [
     // extract CSS into separate file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'main',

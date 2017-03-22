@@ -34,7 +34,7 @@ import('./fil').then(fil => {
 
 * `import` gjør at webpack lager et splitt-punkt, og gjør at innholdet i `fil.js` havner i sin egen bundle.
 * Hvis man ikke har ES6-exports i koden sin kan man også bruke `require.ensure()`
-* Trenger babel-plugin-syntax-dynamic-import for å få dynamiske imports til å bygge med babel.
+* Trenger `babel-plugin-syntax-dynamic-import` for å få dynamiske imports til å bygge med babel.
 
 ## Vendor-filer
 
@@ -93,6 +93,9 @@ if (!browserSupportsAllFeatures()) {
   initialize();
 }
 ```
+
+* Koden sjekker om nettleser har endel standard funksjoner, hvis en eller flere mangler polyfiller vi alt.
+* Kan også bruke plugins til babel for å gjøre dette compile-time. F.eks `babel-preset-env`
 
 ## Mer lesning
 

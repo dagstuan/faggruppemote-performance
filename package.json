@@ -6,8 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && webpack --progress --config webpack.config.js",
-    "start:webpack": "webpack-dev-server --progress --config webpack.config.js",
-    "start": "python -m SimpleHTTPServer 8080",
+    "serve": "python -m SimpleHTTPServer 8080",
     "watch": "onchange '*.js' -- npm run build"
   },
   "author": "",
